@@ -11,6 +11,7 @@ public class MyFirstWebDriverTest {
 	public void myFirstTest(){
 		 WebDriver driver = new FirefoxDriver();
 		 driver.get("http://aca.am");
+		 //some comment added
 		 driver.close();
 		 driver.quit();
 	}
