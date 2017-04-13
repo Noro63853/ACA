@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 
 import static org.testng.Assert.*;
 
@@ -21,11 +22,20 @@ public class MyFirstWebDriverTest {
     @Test()
     public void myFirstTest() throws InterruptedException {
 
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\ADMIN\\Downloads\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\dayana\\Downloads\\chromedriver_win32\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-        driver.get("https://megamarket.am/");
-        WebElement haytararutyun = driver.findElement(By.xpath(".//*[@href='/statements']"));
+        driver.get("https://megamarket.am");
+        Thread.sleep(2000);
+        WebElement ele = driver.findElement(By.xpath("//nav[@class='clearfix']//li[3][@class='pop100']"));
+        Actions action = new Actions(driver);
+        action.moveToElement(ele).build().perform();
+
+        WebElement haytararutyun = driver.findElement(By.xpath("//*[@href='/statements']"));
         haytararutyun.click();
+
+        driver.close();
+        driver.quit();
+    }
 
 //        Thread.sleep(5000);
 //        WebElement pageHaytararutyun = driver.findElement(By.xpath(".//*[@class='statements']"));
@@ -40,8 +50,7 @@ public class MyFirstWebDriverTest {
 //        boolean isPresent_PageKencaxayin = pageKencaxayin.equals(null);
 //        assertFalse(isPresent_PageKencaxayin, "'Կենցաղային տեխնիկա' page not found");
 
-        driver.close();
-        driver.quit();
-    }
 
 }
+
+
