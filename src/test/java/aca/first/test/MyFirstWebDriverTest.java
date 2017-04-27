@@ -17,14 +17,6 @@ public class MyFirstWebDriverTest extends FunctionalTest {
 
     @Test()
     public void myFirstTest() throws InterruptedException {
-        MainPage mainPage = new MainPage(driver);
-        mainPage.openCategoryMovie();
-        mainPage.openMovieList();
-        mainPage.enterName("Հանցագործը");
-        mainPage.search();
-
-
-
 
     }
 }

@@ -12,7 +12,8 @@ public class PageObject {
 
     public PageObject(WebDriver driver){
         this.driver = driver;
-        Actions action = new Actions(driver);
         PageFactory.initElements(driver, this);
+
+
     }
 }
