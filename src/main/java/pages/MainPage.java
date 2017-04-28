@@ -12,6 +12,7 @@ import org.testng.Assert;
  * Created by ADMIN on 27/04/2017.
  */
 public class MainPage extends PageObject {
+<<<<<<< HEAD
     @FindBy(xpath = Constants.ABOUT_US)
     WebElement aboutUs;
 
@@ -47,5 +48,7 @@ public class MainPage extends PageObject {
     }
 
 
+=======
+>>>>>>> 2657ac62b2ee99defdb5aa54fe265267d82c873b
 
 }
