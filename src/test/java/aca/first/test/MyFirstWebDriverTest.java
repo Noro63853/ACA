@@ -1,10 +1,9 @@
 package aca.first.test;
 
-import org.apache.bcel.Constants;
-import org.apache.bcel.classfile.Constant;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -17,13 +16,15 @@ public class MyFirstWebDriverTest extends FunctionalTest {
 
     @Test()
     public void myFirstTest() throws InterruptedException {
+
         MainPage mainPage = new MainPage(driver);
-        mainPage.openCategoryMovie();
-        mainPage.openMovieList();
-        mainPage.enterName("Հանցագործը");
-        mainPage.search();
-
-
+        mainPage.openAboutUs();
+        mainPage.openContacts();
+        WebElement contactos = driver.findElement(By.xpath("//div[@class='about-bloc']"));
+        Assert.assertTrue(contactos != null);
+        mainPage.openAboutUs();
+        mainPage.openInformation();
+        WebElement informato = driver.findElement(By.xpath("//div[@class='about-bloc']"));
 
 
     }
