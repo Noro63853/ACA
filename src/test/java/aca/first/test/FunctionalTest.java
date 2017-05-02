@@ -1,8 +1,7 @@
 package aca.first.test;
 
-import constants.Constants;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -15,16 +14,15 @@ public class FunctionalTest {
 
     @BeforeClass
     public static void testTools(){
-        System.setProperty("webdriver.chrome.driver","C:\\Users\\ACA Student 002\\Downloads\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","C:\\Users\\ADMIN\\Downloads\\chromedriver.exe");
         driver = new ChromeDriver();
 
-        driver.get(Constants.URL);
-        driver.manage().window().maximize();
 
     }
-    @AfterClass
+    @AfterTest
     public static void testQuit(){
-        driver.quit();
         driver.close();
+        driver.quit();
+
     }
 }

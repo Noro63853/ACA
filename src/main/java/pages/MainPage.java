@@ -6,14 +6,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 /**
  * Created by ADMIN on 27/04/2017.
  */
-public class MainPage {
+public class MainPage extends PageObject{
 
-    WebDriver driver ;
     @FindBy(xpath = Constants.ABOUT_US)
     WebElement aboutUs;
 
@@ -25,9 +23,9 @@ public class MainPage {
 
 
     public MainPage(WebDriver driver){
-
-        this.driver = driver;
-        PageFactory.initElements(this.driver, this);
+        super(driver);
+        driver.get(Constants.URL);
+        driver.manage().window().maximize();
     }
     public void openAboutUs() throws InterruptedException {
         Actions action = new Actions(driver);
@@ -37,11 +35,11 @@ public class MainPage {
     }
     public void openInformation() throws InterruptedException {
         information.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
     }
     public void openContacts() throws InterruptedException {
         contacts.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
 
     }
 

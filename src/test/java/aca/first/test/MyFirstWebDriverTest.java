@@ -16,11 +16,11 @@ public class MyFirstWebDriverTest extends FunctionalTest {
         MainPage mainPage = new MainPage(driver);
         mainPage.openAboutUs();
         mainPage.openContacts();
-        WebElement contacts = driver.findElement(By.xpath("//div[@class='about-bloc']"));
+        WebElement contacts = driver.findElement(By.xpath("//div[@class='about-block']"));
         Assert.assertTrue(contacts != null);
         mainPage.openAboutUs();
         mainPage.openInformation();
-        WebElement information = driver.findElement(By.xpath("//div[@class='about-bloc']"));
+        WebElement information = driver.findElement(By.xpath("//div[@class='about-block']"));
         Assert.assertTrue(information != null);
 
 
